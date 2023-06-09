@@ -1,120 +1,337 @@
-/* 
-Tag & Naming Markdown:
-  ! = Global or Parent Elements
-  ? = Child Elements
-  * = Explanation of Code
-*/
-
-/* !-------------------------Global Rules */
-:root {
-  font-size: 10px;
-}
-
+/* Reset default styles */
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-  list-style-type: none;
 }
 
+/* Body styles */
 body {
-  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+  padding: 20px;
 }
 
-/* !-------------------------Grid container */
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 10rem 1fr 1fr;
-  gap: 1rem;
-  height: 100vh;
-  width: 100vw;
-  grid-template-areas:
-    "Head Head Head"
-    "Main Main Main"
-    "Footer Footer Footer";
+.container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* !-------------------------Grid Head */
-
+/* Header styles */
 header {
-  grid-area: Head;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10rem;
-  background-color: #1c1c1c;
+  background-color: #333;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .header-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3rem;
+}
+
+.header-ul {
+  list-style-type: none;
+  display: flex;
 }
 
 .header-li {
-  position: relative; /* Add this line to create a stacking context */
-  display: inline-block;
-  padding: 1rem;
-  color: #f2f2f2;
-  transition: all 0.3s ease 0s;
-}
-
-.header-li:hover .dropdown-menu {
-  display: block;
+  margin-right: 10px;
 }
 
 .header-a {
-  font-size: 2rem;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f2f2f2;
-  padding: 0.5rem;
-  min-width: 10rem;
-  z-index: 1;
-}
-
-.dropdown-menu li {
-  padding: 0.5rem;
-}
-
-.dropdown-menu li a {
-  color: #1c1c1c;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+  transition: color 0.3s ease;
 }
 
 .header-a:hover {
-  color: #9da3a4;
+  color: #f44336;
 }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f2f2f2;
-  padding: 0.5rem;
-  min-width: 10rem;
-  z-index: 1;
+/* Main heading styles */
+h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.dropdown:hover .dropdown-menu {
+/* Form styles */
+.form {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form label {
   display: block;
-  font-size: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.dropdown-menu li {
-  padding: 0.5rem;
+.form input[type="text"],
+.form input[type="url"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px;
 }
 
-.dropdown-menu li a {
-  color: #1c1c1c;
+.form input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
 }
+
+/* Player card styles */
+.player-card {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.player-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.player-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.player-card p {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #666;
+}
+
+.player-card button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Navigation styles */
+.navbar {
+  background: linear-gradient(to right, #f44336, #e57373);
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin-right: 10px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #333;
+  background: linear-gradient(to right, #f44336, #e57373);
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+footer p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #f0f0f0;
+  padding: 20px;
+  width: 300px;
+}
+
+.sidebar h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #666;
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  color: #f44336;
+}
+
+/* Button styles */
+.button {
+  display: inline-block;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  text-align: center;
+}
+
+.table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  width: 400px;
+}
+
+.modal h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.modal p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.modal button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.modal button:hover {
+  background-color: #d32f2f;}
+  
+  .breeds-list-item {
+    width: 500px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .breeds-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .breeds-list-item {
+    width: 300px;
+    margin: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .breeds-list-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .about-text {
+    font-size: 30px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }

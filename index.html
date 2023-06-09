@@ -1,51 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="styles.css" />
-    <title>PuppyBowl</title>
-  </head>
-  <body>
-    <div class="grid-container">
-      <header>
-        <nav class="header-nav">
-          <ul class="header-ul">
-            <li class="header-li dropdown">
-              <a class="header-a" href="#">Placeholder</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Placeholder</a></li>
-              </ul>
-            </li>
-            <li class="header-li dropdown">
-              <a class="header-a" href="#">Placeholder</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Placeholder</a></li>
-              </ul>
-            </li>
-            <li class="header-li dropdown">
-              <a class="header-a" href="#">Placeholder</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Placeholder</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main></main>
-      <footer></footer>
-    </div>
-  </body>
+<html>
+<head>
+  <title>Puppy Bowl Roster</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="breeds.html">Breeds</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Puppy Bowl Roster</h1>
+
+    <form id="add-player-form" class="form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="breed">Breed:</label>
+      <input type="text" id="breed" name="breed" required>
+
+      <label for="imageUrl">Image URL:</label>
+      <input type="url" id="imageUrl" name="imageUrl" required>
+
+      <button type="submit" class="button">Add Player</button>
+    </form>
+
+    <div id="players-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
-
-
-
-
-    <!-- form to add new players -->
-    <div id="new-player-form"></div>
-
-
-    <!-- container for all players -->
-    <div id="all-players-container"></div>

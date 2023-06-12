@@ -13,8 +13,11 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/players`;
 const fetchAllPlayers = async () => {
     try {
         const response = await fetch(APIURL);
+        console.log(response);
         const result = await response.json();
         console.log(result);
+        console.log(result.data.players);
+        return result.data.players;
     } catch (err) {
         console.error('Uh oh, trouble fetching players!', err);
     }
@@ -104,6 +107,7 @@ const renderAllPlayers = (playerList) => {
             // Create a string of HTML for each player
             const playerHTML = `
                 <div class="player-card">
+                    <div class="player-image" style="background-image: url(${player.imageUrl})"></div>
                     <h3>${player.name}</h3>
                     <p>Breed: ${player.breed}</p>
                     <button class="details-btn" data-player-id="${player.id}">See details</button>
@@ -153,10 +157,17 @@ const renderNewPlayerForm = () => {
 }
 
 const init = async () => {
-    const players = await fetchAllPlayers();
-    renderAllPlayers(players);
-
-    renderNewPlayerForm();
-}
+    try {
+      const players = await fetchAllPlayers();
+      if (Array.isArray(players)) {
+        renderAllPlayers(players);
+      } else {
+        throw new Error('fetchAllPlayers did not return an array');
+      }
+      renderNewPlayerForm();
+    } catch (err) {
+      console.error('Uh oh, trouble initializing the app:', err);
+    }
+  }
 
 init();

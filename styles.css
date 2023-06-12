@@ -1,100 +1,40 @@
-:root {
-  font-size: 12px;
+.player-card {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-* {
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.player-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
-body {
-  background-color: #f2f2f2;
+.player-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.container {
-  display: grid;
-  width: 100vw;
-  height: 100vh;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: 10rem 1fr 10rem;
-  grid-template-areas:
-    "Header"
-    "Main"
-    "Footer";
+.player-card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
-/* ? Header Section */
-
-.header {
-  grid-area: Header;
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5rem;
-  text-align: center;
+.player-card button.details-btn {
+  background-color: #007bff;
 }
 
-.header-nav {
-  height: 10rem;
+.player-card button.remove-btn {
+  background-color: #dc3545;
 }
 
-.header-menu {
-  display: flex;
-  padding: 1rem;
-  justify-content: center;
-}
-
-.header-menu li {
-  display: inline-block;
-}
-
-.header-menu a {
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-}
-
-.header-dropdown:hover .header-dropdown-menu {
-  display: block;
-}
-
-.header-dropdown-menu {
-  display: none;
-  position: absolute;
-  padding: 12px;
-  z-index: 1;
-}
-
-.header-dropdown-menu li {
-  display: block;
-}
-
-.header-dropdown-menu a {
-  text-decoration: none;
-}
-
-/* ? Main Section */
-
-.main {
-  grid-area: Main;
-}
-
-/* ? Footer Section */
-
-.footer {
-  grid-area: Footer;
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 5rem;
-  text-align: center;
+.player-image {
+  background-size: cover; /* Adjust as per your requirement */
+  background-position: center; /* Adjust as per your requirement */
+  height: 100px; /* Adjust as per your requirement */
+  /* Other styles for the player image */
 }
